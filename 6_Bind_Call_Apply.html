@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1" >Click Me</button>
+    <button id="btn2" onclick="clickHandler('p2', 'Button 2')">Click Me</button>
+    <button id="btn3" >Click Me</button>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
+
+    <script>
+      const clickHandler = (id, message, e ) => {
+        console.log(e)
+        document.getElementById(id).innerHTML = 'Clicked, ' + message;
+      };
+
+      document.getElementById('btn1').onclick = clickHandler.bind(this,'p1', 'Button 1');
+      document.getElementById('btn3').onclick = ()=>{ clickHandler('p3', 'Button 3') };
+
+      const wrapStrong = () => `<strong>Hello</strong>`;
+
+      document.getElementById('p4').innerHTML = "sdsgdj";
+      document.getElementById('p4').onclick = function(){alert('sdsd')};
+      document.getElementById('p4').ondblclick = wrapStrong;
+      document.getElementById('p4').addEventListener('mouseleave', function(e){
+        
+      })
+      document.getElementById('p4').addEventListener('mouseleave', (e)=>{
+
+      })
+      document.getElementById('p4').addEventListener('mouseleave', wrapStrong)
+    </script>
+  </body>
+</html>

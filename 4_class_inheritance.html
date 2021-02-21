@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="p1"></p>
+  <p id="p2"></p>
+  <p id="p3"></p>
+  <p id="p4"></p>
+  <p id="p5"></p>
+
+  <script>
+    class Person{
+      constructor(firstName = 'name', lastName = 'lastname', phone = '00000'){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+      }
+
+      fullName = () => `${this.firstName} ${this.lastName}` ;
+    }
+
+    class Teacher extends Person{
+      constructor(firstName, lastName, phone, salary, teaches){
+        super(firstName, lastName, phone)
+        this.salary = salary;
+        this.teaches = teaches;
+      }
+    }
+
+    class Student extends Person{
+      constructor(firstName, lastName, phone, payment, learn){
+        super(firstName, lastName, phone)
+        this.payment = payment;
+        this.learn = learn
+      }
+    }
+    
+    class Course{
+      constructor(name, duaration, price){
+        this.name = name;
+        this.duaration = duaration;
+        this.price = price;
+      }
+    }
+
+    const c1 = new Course('ReactJS', 40, 123555);
+
+    const p1 = new Person('reza', 'ahmadi');
+    document.getElementById('p1').innerHTML = p1.fullName();
+
+    const t1 = new Teacher('Hamid reza', 'Izadi Matin', '45654', 12255, c1)
+    document.getElementById('p2').innerHTML = t1.fullName();
+    document.getElementById('p3').innerHTML = t1.teaches.name;
+
+    const s1 = new Student('Mohammad', 'Amiri', '454', 12255, c1)
+    document.getElementById('p4').innerHTML = s1.fullName();
+    document.getElementById('p5').innerHTML = s1.learn.name;
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+.container{
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.students-title{
+  font-weight: 300;
+  font-size: 28px;
+}
+.students-title span{
+  position: relative;
+  padding: 0 16px;
+}
+.students-title span::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: red;
+}
+
+.student-list{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 8px;
+}
+
+.student{
+  width: 30%;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 6px -2px #ccc;
+}
+
+.student .label, .student .value{
+  display: inline-block;
+  padding: 8px 16px;
+}
+.student .label{
+  font-weight: bold;
+}

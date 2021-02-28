@@ -2,6 +2,8 @@
   color: green;
   box-shadow: 0 2px 4px #ccc;
   text-align: center;
-  padding: 30px;
-  font-size: 36px;
+  padding: 16px;
+}
+.page-title h1{
+  font-size: 32px;
 }

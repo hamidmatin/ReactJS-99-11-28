@@ -8,19 +8,19 @@ export default class Students extends Component {
     this.state = {
       studentList: [
         {
-          FirstName: 'Mohammad Mehdi',
+          firstName: 'Mohammad Mehdi',
           lastName: 'Amiri',
         },
         {
-          FirstName: 'Pejman',
+          firstName: 'Pejman',
           lastName: 'Namdari',
         },
         {
-          FirstName: 'Mohammad Mehdi',
+          firstName: 'Mohammad Mehdi',
           lastName: 'Moallemi',
         },
         {
-          FirstName: 'Negin',
+          firstName: 'Negin',
           lastName: 'Salehi',
         },
       ],
@@ -33,22 +33,13 @@ export default class Students extends Component {
           <span>Student List</span>
         </h2>
         <div className='student-list'>
-          <Student
-            FirstName={this.state.studentList[0].FirstName}
-            LastName={this.state.studentList[0].lastName}
-          />
-          <Student
-            FirstName={this.state.studentList[1].FirstName}
-            LastName={this.state.studentList[1].lastName}
-          />
-          <Student
-            FirstName={this.state.studentList[2].FirstName}
-            LastName={this.state.studentList[2].lastName}
-          />
-          <Student
-            FirstName={this.state.studentList[3].FirstName}
-            LastName={this.state.studentList[3].lastName}
-          />
+          {this.state.studentList.map((student, index) => (
+            <Student
+              key={index}
+              FirstName={student.firstName}
+              LastName={student.lastName}
+            />
+          ))}
         </div>
       </div>
     );

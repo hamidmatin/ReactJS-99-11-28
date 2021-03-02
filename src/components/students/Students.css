@@ -42,3 +42,6 @@
 .student .label{
   font-weight: bold;
 }
+.student-form-show{
+  top: 50% !important;
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import User from './User';
-import Styles from './Users.css';
+import './Users.css';
 import CreateUser from './CreateUser';
 
 export default class Users extends Component {
@@ -46,7 +46,7 @@ export default class Users extends Component {
   };
   render() {
     return (
-      <div className={['container', 'mt-5', Styles.title].join(' ')}>
+      <div className={['container', 'mt-5'].join(' ')}>
         <h3 className='title'>
           <span>Users</span>
         </h3>

@@ -8,10 +8,12 @@ export default class User extends Component {
           <h3 className='card-title'>{this.props.name}</h3>
           <p className='card-text'>{this.props.userName}</p>
           <p className='card-text'>{this.props.email}</p>
-          <a className='card-link' 
-            href={'http://' + this.props.website}>
+          <a className='card-link' href={'http://' + this.props.website}>
             {this.props.website}
           </a>
+        </div>
+        <div className='card-footer'>
+          <button className='btn btn-danger' onClick={this.props.deleteUserHandler}>Delete</button>
         </div>
       </div>
     );

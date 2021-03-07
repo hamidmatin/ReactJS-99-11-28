@@ -1,7 +1,7 @@
 .title{
-  display: inline-block;
   padding: 1em;
 }
 .title span{
+  display: inline-block;
   border-bottom: 4px solid red;
 }

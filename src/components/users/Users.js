@@ -44,15 +44,33 @@ export default class Users extends Component {
       users: this.state.users.filter((user) => user.id !== id),
     });
   };
+
+  isUniqueId = (id) => {
+    let index = this.state.users.findIndex((user) => {
+      return user.id === id;
+    });
+    console.log(index);
+    return index === -1;
+  };
+
+  addNewUser = (user)=>{
+    const newState = {
+      ...this.state,
+    }
+    newState.users.push(user);
+
+    this.setState(newState);
+  }
+
   render() {
     return (
       <div className={['container', 'mt-5'].join(' ')}>
         <h3 className='title'>
           <span>Users</span>
         </h3>
-        
-        <CreateUser />
-        
+
+        <CreateUser isUniqueIdHandler={this.isUniqueId} addNewUserHandler={this.addNewUser}/>
+
         <div className='row'>
           {this.state.users.length > 0 ? (
             this.state.users.map((user) => (

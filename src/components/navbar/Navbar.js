@@ -32,6 +32,11 @@ export default class Navbar extends Component {
                   Posts
                 </NavLink>
               </li>
+              <li className='nav-item'>
+                <NavLink className='nav-link' aria-current='page' to='/admin/' >
+                  admin
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

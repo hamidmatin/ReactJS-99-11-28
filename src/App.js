@@ -10,6 +10,7 @@ import Posts from './components/posts/Posts';
 import AppRoute from './containers/appRoute/AppRoute';
 import AdminLayout from './containers/layout/AdminLayout';
 import MainLayout from './containers/layout/MainLayout';
+import Todos from './components/todos/Todos';
 
 class App extends Component {
   render() {
@@ -28,6 +29,10 @@ class App extends Component {
           <AppRoute 
             path='/posts' 
             component={Posts} 
+            layout={MainLayout} />
+          <AppRoute 
+            path='/todos' 
+            component={Todos} 
             layout={MainLayout} />
           <AppRoute
             path='/admin/'

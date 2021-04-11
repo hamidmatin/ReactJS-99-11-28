@@ -33,6 +33,11 @@ export default class Navbar extends Component {
                 </NavLink>
               </li>
               <li className='nav-item'>
+                <NavLink className='nav-link' aria-current='page' to='/todos' >
+                  Todos
+                </NavLink>
+              </li>
+              <li className='nav-item'>
                 <NavLink className='nav-link' aria-current='page' to='/admin/' >
                   admin
                 </NavLink>

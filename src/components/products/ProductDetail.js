@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import ProductField from './ProductField';
 
 export default function ProductDetail() {
   const history = useHistory();
@@ -28,26 +29,13 @@ export default function ProductDetail() {
       {product && (
         <div className='row'>
           <div className='col-sm-9'>
-            <div className='mb-3'>
-              <span className='fw-bold'>Category : </span>
-              <span>{product.category}</span>
-            </div>
-            <div className='mb-3'>
-              <span className='fw-bold'>Title : </span>
-              <span>{product.title}</span>
-            </div>
-            <div className='mb-3'>
-              <span className='fw-bold'>Description : </span>
-              <span>{product.description}</span>
-            </div>
-            <div className='mb-3'>
-              <span className='fw-bold'>Description : </span>
-              <span>{product.description}</span>
-            </div>
-            <div className='mb-3'>
-              <span className='fw-bold'>Price : </span>
-              <span>{product.price}</span>
-            </div>
+            <ProductField label='Category' value={product.category}/>
+
+            <ProductField label='Title' value={product.title}/>
+
+            <ProductField label='Description' value={product.description}/>
+            
+            <ProductField label='Price' value={product.price}/>          
           </div>
 
           <div className='col-sm-3'>

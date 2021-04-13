@@ -4,6 +4,7 @@ import axios from 'axios';
 import User from './User';
 import './Users.css';
 import CreateUser from './CreateUser';
+import PageTitle from '../pageTitle/PageTitle';
 
 export default class Users extends Component {
   constructor() {
@@ -65,9 +66,7 @@ export default class Users extends Component {
   render() {
     return (
       <div className={['container', 'mt-5'].join(' ')}>
-        <h3 className='title'>
-          <span>Users</span>
-        </h3>
+        <PageTitle title='Users' />
 
         <CreateUser isUniqueIdHandler={this.isUniqueId} addNewUserHandler={this.addNewUser}/>
 

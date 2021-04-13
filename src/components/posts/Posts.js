@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import PageTitle from '../pageTitle/PageTitle';
 import Post from './Post';
 
 export default function Posts() {
@@ -60,9 +61,9 @@ export default function Posts() {
   }, []);
   return (
     <div className={['container', 'mt-5'].join(' ')}>
-      <h3 className='title'>
-        <span>Posts</span>
-      </h3>
+      
+      <PageTitle title='Posts' />
+
       <button className='btn btn-success' onClick={addNewPostHandler}>
         Add New
       </button>

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import Todo from './Todo';
+import PageTitle from '../pageTitle/PageTitle';
 
 export default function Todos() {
   const [todoList, setTodoList] = useState([]);
@@ -14,9 +15,9 @@ export default function Todos() {
 
   return (
     <div className={['container', 'mt-5'].join(' ')}>
-      <h3 className='title'>
-        <span>Todos</span>
-      </h3>
+      
+      <PageTitle title='Todos' />
+
       <div className='row'>
         {todoList.length !== 0 ? (
           todoList.map(todo => <Todo 

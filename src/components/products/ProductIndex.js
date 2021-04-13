@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Products from './Products';
 import WidthLoading from '../../HOC/WithLoading';
+import PageTitle from '../pageTitle/PageTitle';
 
 export default function ProductIndex() {
   const [isloading, setIsLoading] = useState(true);
@@ -20,12 +21,20 @@ export default function ProductIndex() {
   }, []);
 
   return (
-    <div className='row'>
-      <div className='col-sm-2'>
-        <aside>Aside</aside>
-      </div>
-      <div className='col-sm-10'>
-        <ProductsWidthLoading isLoading={isloading} productList={productList} />
+    <div className='container'>
+      
+      <PageTitle title='Products' />
+
+      <div className='row'>
+        <div className='col-sm-2'>
+          <aside>Aside</aside>
+        </div>
+        <div className='col-sm-10'>
+          <ProductsWidthLoading
+            isLoading={isloading}
+            productList={productList}
+          />
+        </div>
       </div>
     </div>
   );

@@ -11,8 +11,8 @@ import AppRoute from './containers/appRoute/AppRoute';
 import AdminLayout from './containers/layout/AdminLayout';
 import MainLayout from './containers/layout/MainLayout';
 import Todos from './components/todos/Todos';
-import Products from './components/products/Products';
 import ProductDetail from './components/products/ProductDetail';
+import ProductIndex from './components/products/ProductIndex';
 
 class App extends Component {
   render() {
@@ -38,7 +38,7 @@ class App extends Component {
             layout={MainLayout} />
           <AppRoute 
             path='/products' exact
-            component={Products} 
+            component={ProductIndex} 
             layout={MainLayout} />
           <AppRoute 
             path='/products/:id' 

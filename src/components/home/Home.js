@@ -42,16 +42,19 @@ export default function Home() {
   const myCounter = counter(25);
   console.log(myCounter);
 
-  const { increment, decrement } = myCounter;
+  const { increment: inc, decrement } = myCounter;
 
   const incrementCounterHandler = () => {
-    let c = increment();
+    let c = inc();
     console.log(c);
   };
   const decrementCounterHandler = () => {
     let c = decrement();
     console.log(c);
   };
+
+  
+  
   return (
     <div className={['container', 'mt-5'].join(' ')}>
       <h3 className='title'>

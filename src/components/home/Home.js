@@ -1,4 +1,5 @@
 import React from 'react';
+import PageTitle from '../pageTitle/PageTitle';
 
 export default function Home() {
   const myFunction = (min, max) => {
@@ -57,13 +58,14 @@ export default function Home() {
   
   return (
     <div className={['container', 'mt-5'].join(' ')}>
-      <h3 className='title'>
-        <span>Home</span>
-      </h3>
+
+      <PageTitle title='Home'/>
+
       <button onClick={test}>Test</button>
       <button onClick={incrementCounterHandler}>Increment</button>
       <button onClick={decrementCounterHandler}>Decrement</button>
       <p>This is a react case study project.</p>
+     
     </div>
   );
 }

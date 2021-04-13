@@ -5,6 +5,7 @@ import User from './User';
 import './Users.css';
 import CreateUser from './CreateUser';
 import PageTitle from '../pageTitle/PageTitle';
+import UserList from './UserList';
 
 export default class Users extends Component {
   constructor() {
@@ -18,10 +19,6 @@ export default class Users extends Component {
   componentDidMount() {
     axios
       .get('https://jsonplaceholder.typicode.com/users')
-      // .then(response => {
-      //   console.log(response)
-      //   console.log(response.data)
-      // })
       .then((response) => response.data)
       .then((userList) => {
         console.log(userList);
@@ -70,25 +67,8 @@ export default class Users extends Component {
 
         <CreateUser isUniqueIdHandler={this.isUniqueId} addNewUserHandler={this.addNewUser}/>
 
-        <div className='row'>
-          {this.state.users.length > 0 ? (
-            this.state.users.map((user) => (
-              <div className='col-md-6 col-lg-3' key={user.id}>
-                <User
-                  name={user.name}
-                  userName={user.username}
-                  email={user.email}
-                  website={user.website}
-                  deleteUserHandler={() => {
-                    this.deleteUser(user.id);
-                  }}
-                />
-              </div>
-            ))
-          ) : (
-            <p>Empty User List</p>
-          )}
-        </div>
+        <UserList users={this.state.users} deleteUser={this.deleteUser}/>
+        
       </div>
     );
   }

@@ -43,6 +43,11 @@ export default class Navbar extends Component {
                 </NavLink>
               </li>
               <li className='nav-item'>
+                <NavLink className='nav-link' aria-current='page' to='/reduxclassbase' >
+                  Redux Class Base
+                </NavLink>
+              </li>
+              <li className='nav-item'>
                 <NavLink className='nav-link' aria-current='page' to='/admin/' >
                   admin
                 </NavLink>

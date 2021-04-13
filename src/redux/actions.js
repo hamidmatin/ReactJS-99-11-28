@@ -1,6 +1,8 @@
+import * as actionTypes from './actiontypes'
+
 export const testDispatchWithAction = (value) => {
   return {
-    type: 'test-dispatch',
+    type: actionTypes.TEST_DISPATCH,
     value: value,
   };
 };

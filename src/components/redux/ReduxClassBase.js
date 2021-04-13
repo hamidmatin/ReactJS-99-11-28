@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { testDispatchWithAction } from '../../redux/actions';
+import { TEST } from '../../redux/actiontypes';
 import PageTitle from '../pageTitle/PageTitle';
 
 class ReduxClassBase extends Component {
@@ -30,7 +31,7 @@ const mapDispatchToProps = (dispatch) =>{
 
   return {
     testDispatch : () =>{
-      dispatch({type: 'test', value: 'Test dispatch'})
+      dispatch({type: TEST, value: 'Test dispatch'})
     },
     testDispatchWithAction: ()=>{
       dispatch(testDispatchWithAction('Test dispatch Width Action'))

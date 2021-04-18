@@ -9,13 +9,16 @@ import './index.css';
 import MyApp from './App';
 import reportWebVitals from './reportWebVitals';
 import reducer from './redux/reducer';
+import TestContextProvider from './context/TestContext';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <MyApp />
+      <TestContextProvider>
+        <MyApp />
+      </TestContextProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -24,3 +24,39 @@ export const SetLoadingOff = () => {
     type: actionTypes.LOADING_OFF,
   };
 };
+
+/****************/
+export const loadAllAlbums = () => {
+  return {
+    type: actionTypes.ALBUMS_LOAD_ALL,
+  };
+};
+
+export const loadAllAlbumsAsync = () => {
+  return async (dispatch, getState) => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/albums');
+    const allAlbums = await response.json();
+    dispatch({ type: actionTypes.ALBUMS_LOAD_ALL_ASYNC, value: allAlbums });
+  };
+};
+
+export const deleteAlbum = (id) => {
+  return {
+    type: actionTypes.ALBUMS_DELETE_ITEM,
+    value: id,
+  };
+};
+
+export const deleteAlbumAsync = (id) => {
+  return async (dispatch, getState) => {
+    /**** */
+    // async opertors
+    /**** */
+    let newAlbums = getState().albums.filter((album) => album.id !== id)
+   
+    dispatch({
+      type: actionTypes.ALBUMS_DELETE_ITEM_ASYNC,
+      value: newAlbums,
+    })
+  };
+};

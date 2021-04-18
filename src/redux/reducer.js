@@ -2,7 +2,8 @@ import * as actionTypes from './actiontypes';
 
 const initState = {
   testRedux: 'Empty',
-  isLoading: true
+  isLoading: true,
+  albums: [],
 };
 
 const reducer = (state = initState, action) => {
@@ -33,16 +34,43 @@ const reducer = (state = initState, action) => {
       };
 
     case actionTypes.LOADING_ON:
-      return{
+      return {
         ...state,
-        isLoading: true
-      }
+        isLoading: true,
+      };
 
     case actionTypes.LOADING_OFF:
-      return{
+      return {
         ...state,
-        isLoading: false
-      }
+        isLoading: false,
+      };
+
+    case actionTypes.ALBUMS_LOAD_ALL:
+      const newState = { ...state };
+      fetch('https://jsonplaceholder.typicode.com/albums')
+        .then((resp) => resp.json())
+        .then((result) => {
+          newState.albums = result;
+        });
+      return newState;
+
+    case actionTypes.ALBUMS_LOAD_ALL_ASYNC:
+      console.log(action.value);
+      return {
+        ...state,
+        albums: action.value,
+      };
+
+    case actionTypes.ALBUMS_DELETE_ITEM:
+      return {
+        ...state,
+        albums: state.albums.filter((album) => album.id !== action.value),
+      };
+    case actionTypes.ALBUMS_DELETE_ITEM_ASYNC:
+      return {
+        ...state,
+        albums: action.value,
+      };
     default:
       return state;
   }

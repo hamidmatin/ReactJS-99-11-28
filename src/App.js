@@ -15,6 +15,7 @@ import ProductDetail from './components/products/ProductDetail';
 import ProductIndex from './components/products/ProductIndex';
 import ReduxClassBase from './components/redux/ReduxClassBase';
 import ReduxFunctionBase from './components/redux/ReduxFunctionBase';
+import AlbumsIndex from './components/albums/AlbumsIndex';
 
 class App extends Component {
   render() {
@@ -53,6 +54,10 @@ class App extends Component {
           <AppRoute 
             path='/reduxfunctionbase' 
             component={ReduxFunctionBase} 
+            layout={MainLayout} />
+          <AppRoute 
+            path='/albums' 
+            component={AlbumsIndex} 
             layout={MainLayout} />
           <AppRoute
             path='/admin/'

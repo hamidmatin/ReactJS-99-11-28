@@ -14,6 +14,7 @@ import Todos from './components/todos/Todos';
 import ProductDetail from './components/products/ProductDetail';
 import ProductIndex from './components/products/ProductIndex';
 import ReduxClassBase from './components/redux/ReduxClassBase';
+import ReduxFunctionBase from './components/redux/ReduxFunctionBase';
 
 class App extends Component {
   render() {
@@ -48,6 +49,10 @@ class App extends Component {
           <AppRoute 
             path='/reduxclassbase' 
             component={ReduxClassBase} 
+            layout={MainLayout} />
+          <AppRoute 
+            path='/reduxfunctionbase' 
+            component={ReduxFunctionBase} 
             layout={MainLayout} />
           <AppRoute
             path='/admin/'
